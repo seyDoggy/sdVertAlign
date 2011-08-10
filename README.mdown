@@ -10,7 +10,7 @@ I'm always using this plugin to vertically align child elements within their par
 
 * README.mdown
 * jquery.sdvertalign.js - development version
-* jquery.sdvertalign.js - minimized version
+* jquery.sdvertalign.min.js - minimized version
 
 ## Argument definitions ##
 
