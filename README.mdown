@@ -1,6 +1,6 @@
 # sdVertAlign #
 **AUTHOR:	Adam Merrifield**   
-**VERSION: 2.0.0**   
+**VERSION: 2.1.0**   
 
 ## About sdVertAlign ##
 
@@ -14,8 +14,18 @@ I'm always using this plugin to vertically align child elements within their par
 
 ## Argument definitions ##
 
-**parent**: the parent element containing the elements you wish to vertically align.
+* **parent** (optional): the parent element containing the elements you wish to vertically align (if different then the elements *actual* parent). Parent is automatically detected if left blank.
+* **'margin'** or **'m'** (optional): sets the distance to center using margin instead of padding.
+* **'outer'**, **'outerHeight'** or **'o'** (optional): bases the height calculation on outer height of each element instead of inner height.
 
 ## Usage ##
 
+	$('.someInnerElement').sdVertAlign();
+	
+	$('.someInnerElement').sdVertAlign('m','o');
+
+	$('.someInnerElement').sdVertAlign('outer');
+
 	$('.someInnerElement').sdVertAlign($('.someOuterElement'));
+	
+	$('.someInnerElement').sdVertAlign($('.anotherThing'),'margin');
