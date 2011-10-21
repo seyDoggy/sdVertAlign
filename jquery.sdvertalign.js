@@ -2,9 +2,10 @@
 	# sdVertAlign - vertical alignment function #
 
 	AUTHOR:	Adam Merrifield <http://adam.merrifield.ca>
-	VERSION: 2.1.0
+	VERSION: 2.1.1
 
 	UPDATES:
+	- (2.1.1) added support for chaining
 	- (2.1.0) added options
 	- (2.0.0) forked to jquery plugin
 	- (1.0.0) initial release
@@ -36,6 +37,7 @@
         };
 
         $(this).css(padMar, ((vcenterParentHeight - vcenterHeight) / 2));
+		return $(this);
     };
 })(jQuery);
 /* END sdVertAlign */
