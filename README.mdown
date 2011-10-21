@@ -1,6 +1,6 @@
 # sdVertAlign #
 **AUTHOR:	Adam Merrifield**   
-**VERSION: 2.1.0**   
+**VERSION: 2.1.1**   
 
 ## About sdVertAlign ##
 
@@ -20,12 +20,19 @@ I'm always using this plugin to vertically align child elements within their par
 
 ## Usage ##
 
+	// default
 	$('.someInnerElement').sdVertAlign();
 	
-	$('.someInnerElement').sdVertAlign('m','o');
+	// uses margin and outer height to set vertical alignment
+	$('.someInnerElement').sdVertAlign('m','o'); 
 
+	// uses outer height to set vertical alignment
 	$('.someInnerElement').sdVertAlign('outer');
 
-	$('.someInnerElement').sdVertAlign($('.someOuterElement'));
+	// sets vertical alignment of .someInnerElement child element
+	// to .someInnerElement parent
+	$('.someInnerElement div').sdVertAlign($('.someInnerElement').parent());
 	
+	// sets vertical alignment of .someInnerElement
+	// to another element (not default parent)
 	$('.someInnerElement').sdVertAlign($('.anotherThing'),'margin');
