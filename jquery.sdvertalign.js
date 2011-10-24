@@ -2,9 +2,10 @@
 	# sdVertAlign - vertical alignment function #
 
 	AUTHOR:	Adam Merrifield <http://adam.merrifield.ca>
-	VERSION: 2.1.1
+	VERSION: 2.1.2
 
 	UPDATES:
+	- (2.1.2) improved performance by using native this instead of $(this)
 	- (2.1.1) added support for chaining
 	- (2.1.0) added options
 	- (2.0.0) forked to jquery plugin
@@ -18,10 +19,10 @@
 */
  (function($) {
     $.fn.sdVertAlign = function() {
-        var parent = $(this).parent(),
+        var parent = this.parent(),
 	        padMar = 'padding-top',
 	        vcenterParentHeight = $(parent).innerHeight(true),
-	        vcenterHeight = $(this).innerHeight(true),
+	        vcenterHeight = this.innerHeight(true),
 	        pm = Array('m', 'margin'),
 	        io = Array('o', 'outer', 'outerHeight'),
 	        i = 0,
@@ -33,11 +34,11 @@
 
         for (i; i < argLen; i++) {
             if ($.inArray(arguments[i], pm)) padMar = 'margin-top';
-            if ($.inArray(arguments[i], io)) vcenterParentHeight = $(parent).outerHeight(true), vcenterHeight = $(this).outerHeight(true);
+            if ($.inArray(arguments[i], io)) vcenterParentHeight = $(parent).outerHeight(true), vcenterHeight = this.outerHeight(true);
         };
 
-        $(this).css(padMar, ((vcenterParentHeight - vcenterHeight) / 2));
-		return $(this);
+        this.css(padMar, ((vcenterParentHeight - vcenterHeight) / 2));
+		return this;
     };
 })(jQuery);
 /* END sdVertAlign */
